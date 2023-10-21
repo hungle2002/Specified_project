@@ -4,11 +4,13 @@ import { View, Text, StyleSheet } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import { HStack, Spinner, Heading } from "native-base";
 import { User } from "@/Services";
+import { styled } from "nativewind";
 
 export interface IHomeProps {
   data: User | undefined;
   isLoading: boolean;
 }
+
 
 export const Home = (props: IHomeProps) => {
   const { data, isLoading } = props;
@@ -24,7 +26,8 @@ export const Home = (props: IHomeProps) => {
         </HStack>
       ) : (
         <>
-          <Text>{i18n.t(LocalizationKey.HOME)}</Text>
+          <Text className="font-bold text-lg">{i18n.t(LocalizationKey.HOME)}</Text>
+          <Text className="font-bold text-lg">{i18n.t(LocalizationKey.HOME)}</Text>
           <Heading color="primary.500" fontSize="md">
             {data?.username}
           </Heading>
