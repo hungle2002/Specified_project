@@ -17,7 +17,7 @@ const RootStack = createNativeStackNavigator<RootStackParamList>();
 const ApplicationNavigator = () => {
   return (
     <NavigationContainer>
-      <StatusBar />
+      <StatusBar/>
       <RootStack.Navigator screenOptions={{ headerShown: false }}>
         <RootStack.Screen
           name={RootScreens.WELCOME}

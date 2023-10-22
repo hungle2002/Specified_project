@@ -26,6 +26,7 @@ export enum NavigationColors {
  * FontSize
  */
 export enum FontSize {
+  TINY=14,
   SMALL = 16,
   REGULAR = 20,
   LARGE = 40,
