@@ -1,19 +1,25 @@
 import { i18n, LocalizationKey } from "@/Localization";
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
+import { Button } from "native-base";
 import { StatusBar } from "expo-status-bar";
 import { HStack, Spinner, Heading } from "native-base";
 import { User } from "@/Services";
-import { styled } from "nativewind";
+import { setDefaultTheme, changeTheme } from "@/Store/reducers";
+import { useAppDispatch, useAppSelector } from '@/Hooks'
+import { ThemeColors } from "@/Theme";
 
 export interface IHomeProps {
   data: User | undefined;
   isLoading: boolean;
 }
 
-
-export const Home = (props: IHomeProps) => {
+export const Home = (props: IHomeProps) => {  
   const { data, isLoading } = props;
+
+  const theme = useAppSelector( state => state.theme.theme )
+  const dispatch = useAppDispatch()
+
   return (
     <View style={styles.container}>
       <StatusBar style="auto" />
@@ -26,8 +32,11 @@ export const Home = (props: IHomeProps) => {
         </HStack>
       ) : (
         <>
-          <Text className="font-bold text-lg">{i18n.t(LocalizationKey.HOME)}</Text>
-          <Text className="font-bold text-lg">{i18n.t(LocalizationKey.HOME)}</Text>
+          <Text className={`text-[${ThemeColors[theme].ERROR}]`}>{i18n.t(LocalizationKey.HOME)}</Text>
+          <Text className="font-bold text-lg text-[#28a745]">{i18n.t(LocalizationKey.HOME)}</Text>
+          <Button onPress={() => dispatch(changeTheme( {theme: 'custom1'} ))}>
+            Change Theme
+          </Button>
           <Heading color="primary.500" fontSize="md">
             {data?.username}
           </Heading>
