@@ -3,4 +3,8 @@ export enum LocalizationKey {
   HOME = "home",
   START = "start",
   LOADING = "loading",
+  NOTIFICATIONS = "notifications",
+  SHOPPING = "shopping",
+  PROFILE = "profile",
+  LOYALTY = "loyalty"
 }
