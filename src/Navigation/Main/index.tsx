@@ -9,6 +9,8 @@ import { NotificationsContainer } from "@/Screens/Notifications";
 import { ProfileContainer } from "@/Screens/Profile";
 import { ThemeColors } from "@/Theme";
 import { useAppSelector } from '@/Hooks'
+import { TabScreens } from "@/Screens";
+
 
 const Tab = createBottomTabNavigator();
 
@@ -17,7 +19,7 @@ export const MainNavigator = () => {
   const theme = useAppSelector( state => state.theme.theme )
   return (
     <Tab.Navigator
-    initialRouteName= "Home"
+    initialRouteName= {TabScreens.HOME}
     screenOptions={({ route }) => ({
       headerShown: false,
       tabBarIcon: ({ focused, color, size }) => {
@@ -51,9 +53,9 @@ export const MainNavigator = () => {
       tabBarInactiveTintColor: ThemeColors[theme].SUBTEXT,
     })}
     >
-      <Tab.Screen name="Shopping" component={ShoppingContainer} />
-      <Tab.Screen name="Loyalty" component={LoyaltyContainer} />
-      <Tab.Screen name="Home" component={HomeContainer} 
+      <Tab.Screen name={TabScreens.SHOPPING} component={ShoppingContainer} />
+      <Tab.Screen name={TabScreens.LOYALTY}component={LoyaltyContainer} />
+      <Tab.Screen name={TabScreens.HOME} component={HomeContainer} 
         options={{
           tabBarIcon:  ({ focused}) => {
             let iconName = "ios-home";
@@ -72,17 +74,12 @@ export const MainNavigator = () => {
                 alignItems: 'center'
               }}>
               <Ionicons name={iconName} color={'white'} size={24}/>
-            {/* <Icon
-              name="pluscircle"
-              size={Platform.OS === 'ios' ? 50 : 60}
-              color={focused ? '#ff4162' : '#ff748c'}
-            /> */}
           </View>
           },
         }}
       />
-      <Tab.Screen name="Notifications" component={NotificationsContainer} />
-      <Tab.Screen name="Account" component={ProfileContainer} />
+      <Tab.Screen name={TabScreens.NOTIFICATIONS} component={NotificationsContainer} />
+      <Tab.Screen name={TabScreens.PROFILE} component={ProfileContainer} />
     </Tab.Navigator>
   );
 };

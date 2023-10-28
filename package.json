@@ -9,12 +9,18 @@
     "web": "expo start --web"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.4.2",
+    "@fortawesome/free-solid-svg-icons": "^6.4.2",
+    "@fortawesome/react-fontawesome": "^0.2.0",
+    "@fortawesome/react-native-fontawesome": "^0.3.0",
     "@react-native-async-storage/async-storage": "1.17.11",
     "@react-native-community/netinfo": "9.3.7",
     "@react-navigation/bottom-tabs": "^6.4.0",
     "@react-navigation/native": "^6.0.13",
     "@react-navigation/native-stack": "^6.9.0",
     "@reduxjs/toolkit": "^1.8.5",
+    "@types/react-native-snap-carousel": "^3.8.7",
+    "deprecated-react-native-prop-types": "^5.0.0",
     "expo": "^48.0.0",
     "expo-camera": "~13.2.1",
     "expo-device": "~5.2.1",
@@ -25,25 +31,27 @@
     "i18n-js": "^4.1.1",
     "lottie-react-native": "5.1.4",
     "native-base": "^3.4.15",
+    "nativewind": "^2.0.11",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-native": "0.71.6",
     "react-native-safe-area-context": "4.5.0",
     "react-native-screens": "~3.20.0",
-    "react-native-svg": "13.4.0",
+    "react-native-snap-carousel": "^3.9.1",
+    "react-native-svg": "^13.4.0",
     "react-native-web": "~0.18.11",
+    "react-navigation": "^5.0.0",
     "react-redux": "^8.0.2",
-    "redux-persist": "^6.0.0",
-    "nativewind": "^2.0.11"
+    "redux-persist": "^6.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
     "@types/react": "~18.0.27",
     "@types/react-native": "~0.69.1",
+    "@types/react-navigation": "^3.4.0",
     "babel-plugin-module-resolver": "^4.1.0",
-    "typescript": "^4.9.4",
-    "tailwindcss": "3.3.2"
-
+    "tailwindcss": "3.3.2",
+    "typescript": "^4.9.4"
   },
   "private": true
 }

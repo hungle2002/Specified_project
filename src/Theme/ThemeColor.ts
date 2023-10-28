@@ -15,6 +15,7 @@ export const ThemeColors = {
 
     SUCCESS : "#28a745",
     ERROR : "#dc3545",
+    SALE: "#e30b0b",
   },
   'custom1': {
     TRANSPARENT : "rgba(0,0,0,0)",
@@ -22,16 +23,17 @@ export const ThemeColors = {
     WHITE : "#ffffff",
     BLACK : "#000000",
 
-    TITLE: "#053B50",
     TEXT : "#000000",
     SUBTEXT : "#7C7878",
 
     PRIMARY : "#176B87",
-    SECONDARY : "#BCFFBF",
+    SECONDARY : "#053B50",
     TERTIARY : "#64CCC5",
+    BACKGROUND: "#EEEEEE",
 
     SUCCESS : "#28a745",
     ERROR : "#dc3545",
+    SALE: "#e30b0b",
   },
 }
 
