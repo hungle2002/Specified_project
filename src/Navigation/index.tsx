@@ -1,4 +1,5 @@
 import React from "react";
+// import { StatusBar } from "expo-status-bar";
 import { StatusBar } from "react-native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { NavigationContainer } from "@react-navigation/native";
@@ -17,8 +18,13 @@ const RootStack = createNativeStackNavigator<RootStackParamList>();
 const ApplicationNavigator = () => {
   return (
     <NavigationContainer>
-      <StatusBar/>
-      <RootStack.Navigator screenOptions={{ headerShown: false }}>
+      <StatusBar />
+      <RootStack.Navigator 
+      screenOptions={{ 
+        headerShown: false, 
+        animation: "fade_from_bottom", 
+        }}
+      >
         <RootStack.Screen
           name={RootScreens.WELCOME}
           component={WelcomeContainer}
