@@ -14,4 +14,5 @@ export enum LocalizationKey {
   PROFILE = "profile",
   LOYALTY = "loyalty",
   VIEW_MORE="view more",
+  SEARCH_PRODUCTS="search products",
 }

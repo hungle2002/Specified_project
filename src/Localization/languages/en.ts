@@ -9,4 +9,6 @@ export const en = {
   [LocalizationKey.HOME_TREND]: "Trending",
   [LocalizationKey.LOADING]: "Loading",
   [LocalizationKey.VIEW_MORE]: "View more",
+  [LocalizationKey.SHOPPING]: "Shopping",
+  [LocalizationKey.SEARCH_PRODUCTS]: "Search products...",
 };

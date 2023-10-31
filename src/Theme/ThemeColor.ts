@@ -1,7 +1,9 @@
 export const ThemeColors = {
   'default': {
+    TRANSPARENT_0_5: "rgba(255,255,255,0.5)",
     TRANSPARENT : "rgba(0,0,0,0)",
     INPUT_BACKGROUND : "#FFFFFF",
+    BUTTON_SECONDARY : "#FFFFFF",
     WHITE : "#ffffff",
     BLACK : "#000000",
 
@@ -18,8 +20,10 @@ export const ThemeColors = {
     SALE: "#e30b0b",
   },
   'custom1': {
+    TRANSPARENT_0_5: "rgba(255,255,255,0.5)",
     TRANSPARENT : "rgba(0,0,0,0)",
     INPUT_BACKGROUND : "#FFFFFF",
+    BUTTON_SECONDARY : "#FFFFFF",
     WHITE : "#ffffff",
     BLACK : "#000000",
 
