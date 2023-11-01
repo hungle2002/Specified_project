@@ -15,4 +15,9 @@ export enum LocalizationKey {
   LOYALTY = "loyalty",
   VIEW_MORE="view more",
   SEARCH_PRODUCTS="search products",
+
+  ALL="all",
+  RECENTLY_RELEASED="recently released",
+  FILTER="filter",
+
 }

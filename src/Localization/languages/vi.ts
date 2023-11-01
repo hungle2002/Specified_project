@@ -13,5 +13,8 @@ export const vi = {
 
   [LocalizationKey.START]: "Bắt đầu",
   [LocalizationKey.LOADING]: "Đang tải",
-
+  [LocalizationKey.SEARCH_PRODUCTS]: "Tìm kiếm sản phẩm...",
+  [LocalizationKey.ALL]: "Tất cả",
+  [LocalizationKey.RECENTLY_RELEASED]: "Mới ra mắt",
+  [LocalizationKey.FILTER]: "Bộ lọc",
 };

@@ -41,19 +41,21 @@ const small = tiny * 2; // 10
 const regular = tiny * 3; // 15
 const medium = small * 2; //20
 const large = regular * 2; // 30
-const base_border_radius = 15;
+const large_bradius = 15;
+const base_bradius = 8;
 const border_width = 1;
 const base_icon_size = 24;
-const circle_button = 40;
+const small_button = 40;
 export enum MetricsSizes {
   TINY = tiny,
   SMALL = small,
   REGULAR = regular,
   LARGE = large,
-  BASE_BORDER_RADIUS = base_border_radius,
+  LARGE_BRADIUS = large_bradius,
+  BASE_BRADIUS = base_bradius,
   BASE_PADDING = small,
   LARGE_PADDING = medium,
   BORDER_WIDTH = border_width,
   BASE_ICON_SIZE = base_icon_size,
-  CIRCLE_BUTTON = circle_button,
+  SMALL_BUTTON = small_button,
 }
