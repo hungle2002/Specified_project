@@ -11,4 +11,8 @@ export const en = {
   [LocalizationKey.VIEW_MORE]: "View more",
   [LocalizationKey.SHOPPING]: "Shopping",
   [LocalizationKey.SEARCH_PRODUCTS]: "Search products...",
+
+  [LocalizationKey.ALL]: "All",
+  [LocalizationKey.RECENTLY_RELEASED]: "Recently released",
+  [LocalizationKey.FILTER]: "Filter",
 };
