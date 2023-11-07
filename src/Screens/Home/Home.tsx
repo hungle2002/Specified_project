@@ -9,11 +9,11 @@ import CarouselCards from '@/Components/common/carousel';
 import ProductCarousel from '@/Components/Home/productCarousel';
 import { BannerModel, ProductBannerModel } from '@/Services/banners';
 import SafeViewAndroid from '@/Components/common/SafeAreaViewAndroid';
-import { TabScreens } from '..';
+import { RootScreens, TabScreens } from '..';
 
 let theme: ValidThemeColors = 'default';
 interface IHomeProps {
-  onNavigate: (string: TabScreens) => void;
+  onNavigate: (string: TabScreens | RootScreens) => void;
 }
 
 const promotionData: BannerModel[] = HomeBanner?.promotion.map((e) => ({ imgUrl: e }));
@@ -42,7 +42,7 @@ export const Home = ( props: IHomeProps ) => {
             <View>
               <View style={styles.headerContainer}>
                 <Text style={styles.header}>{i18n.t(LocalizationKey.HOME_TREND)}</Text>
-                <TouchableOpacity onPress={() => props.onNavigate( TabScreens.SHOPPING )} >
+                <TouchableOpacity onPress={() => props.onNavigate( RootScreens.CART )} >
                   <Text style={styles.viewMoreText} >{i18n.t(LocalizationKey.VIEW_MORE)}</Text>
                 </TouchableOpacity>
               </View>
@@ -51,7 +51,7 @@ export const Home = ( props: IHomeProps ) => {
             <View>
               <View style={styles.headerContainer}>
                 <Text style={styles.header}>{i18n.t(LocalizationKey.HOME_NEW)}</Text>
-                <TouchableOpacity onPress={() => props.onNavigate( TabScreens.SHOPPING )} >
+                <TouchableOpacity onPress={() => props.onNavigate( RootScreens.CART )} >
                   <Text style={styles.viewMoreText} >{i18n.t(LocalizationKey.VIEW_MORE)}</Text>
                 </TouchableOpacity>
               </View>

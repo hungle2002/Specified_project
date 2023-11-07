@@ -11,8 +11,28 @@ import { ThemeColors } from "@/Theme";
 import { useAppSelector } from '@/Hooks'
 import { TabScreens } from "@/Screens";
 
+export type TabParamList = {
+  [TabScreens.HOME]: undefined;
+  [TabScreens.LOYALTY]: undefined;
+  [TabScreens.NOTIFICATIONS]: undefined;
+  [TabScreens.PROFILE]: undefined;
+  [TabScreens.SHOPPING]: undefined;
+};
 
-const Tab = createBottomTabNavigator();
+enum NavigationIconList {
+  IOS_HOME = "ios-home",
+  IOS_HOME_OUTLINE = "ios-home-outline",
+  CART = "cart",
+  CART_OUTLINE = "cart-outline",
+  CASH = "cash",
+  CASH_OUTLNE = "cash-outline",
+  NOTIFICATION = "notifications",
+  NOTIFICATION_OUTLINE = "notifications-outline",
+  PERSON = "person",
+  PERSON_OUTLINE = "person-outline",
+} 
+
+const Tab = createBottomTabNavigator<TabParamList>();
 
 // @refresh reset
 export const MainNavigator = () => {
@@ -23,17 +43,15 @@ export const MainNavigator = () => {
     screenOptions={({ route }) => ({
       headerShown: false,
       tabBarIcon: ({ focused, color, size }) => {
-        let iconName;
-        if (route.name === 'Home') {
-          iconName = focused ? "ios-home" : "ios-home-outline";
-        } else if (route.name === 'Shopping') {
-          iconName = focused ? "cart" : "cart-outline";
-        } else if (route.name === 'Loyalty') {
-          iconName = focused ? "cash" : "cash-outline";
-        } else if (route.name === 'Notifications') {
-          iconName = focused ? "notifications" : "notifications-outline";
+        let iconName : NavigationIconList;
+        if (route.name === TabScreens.SHOPPING) {
+          iconName = focused ? NavigationIconList.CART : NavigationIconList.CART_OUTLINE;
+        } else if (route.name === TabScreens.LOYALTY) {
+          iconName = focused ? NavigationIconList.CASH : NavigationIconList.CASH_OUTLNE;
+        } else if (route.name === TabScreens.NOTIFICATIONS) {
+          iconName = focused ? NavigationIconList.NOTIFICATION : NavigationIconList.NOTIFICATION_OUTLINE;
         } else {
-          iconName = focused ? "person" : "person-outline";
+          iconName = focused ? NavigationIconList.PERSON : NavigationIconList.PERSON_OUTLINE;
         }
 
         // You can return any component that you like here!
@@ -73,7 +91,7 @@ export const MainNavigator = () => {
                 justifyContent: 'center',
                 alignItems: 'center'
               }}>
-              <Ionicons name={iconName} color={'white'} size={24}/>
+              <Ionicons name={NavigationIconList.IOS_HOME} color={'white'} size={24}/>
           </View>
           },
         }}
