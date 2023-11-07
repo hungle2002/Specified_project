@@ -7,6 +7,8 @@ export enum LocalizationKey {
   HOME_TREND = "home trend",
   HOME_NEW = "home new",
 
+  CART_TITLE = "Shopping Cart",
+
   START = "start",
   LOADING = "loading",
   NOTIFICATIONS = "notifications",

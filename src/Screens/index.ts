@@ -1,6 +1,7 @@
 export enum RootScreens {
   MAIN = "Main",
   WELCOME = "Welcome",
+  CART = "Cart",
 }
 
 export enum TabScreens {
