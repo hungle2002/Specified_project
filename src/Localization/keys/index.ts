@@ -8,6 +8,7 @@ export enum LocalizationKey {
   HOME_NEW = "home new",
 
   CART_TITLE = "Shopping Cart",
+  PRODUCT_DETAIL_TITLE = "Product detail",
 
   START = "start",
   LOADING = "loading",

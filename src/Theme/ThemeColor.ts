@@ -31,7 +31,7 @@ export const ThemeColors = {
     SUBTEXT : "#7C7878",
 
     PRIMARY : "#176B87",
-    SECONDARY : "#053B50",
+    SECONDARY : "#053B50", 
     TERTIARY : "#64CCC5",
     BACKGROUND: "#EEEEEE",
 

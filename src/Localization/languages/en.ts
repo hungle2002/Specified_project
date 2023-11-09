@@ -11,6 +11,8 @@ export const en = {
   [LocalizationKey.VIEW_MORE]: "View more",
 
   [LocalizationKey.CART_TITLE]: "Shopping Cart",
+  [LocalizationKey.PRODUCT_DETAIL_TITLE]: "Detail",
+
   [LocalizationKey.SHOPPING]: "Shopping",
   [LocalizationKey.SEARCH_PRODUCTS]: "Search products...",
 

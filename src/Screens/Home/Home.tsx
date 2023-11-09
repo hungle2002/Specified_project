@@ -1,6 +1,6 @@
 import { i18n, LocalizationKey } from '@/Localization';
 import React from 'react';
-import { View, Text, StyleSheet, ScrollView, Image, SafeAreaView, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, Image, SafeAreaView, TouchableOpacity} from 'react-native';
 import { Button } from 'native-base';
 import { useAppSelector } from '@/Hooks';
 import { ThemeColors, FontSize, ValidThemeColors } from '@/Theme';
@@ -10,6 +10,7 @@ import ProductCarousel from '@/Components/Home/productCarousel';
 import { BannerModel, ProductBannerModel } from '@/Services/banners';
 import SafeViewAndroid from '@/Components/common/SafeAreaViewAndroid';
 import { RootScreens, TabScreens } from '..';
+import CustomSearchBar from '@/Components/common/SearchBar';
 
 let theme: ValidThemeColors = 'default';
 interface IHomeProps {
@@ -26,6 +27,9 @@ export const Home = ( props: IHomeProps ) => {
       <View style={styles.container}>
         <View className="h-48 w-full z-10 absolute top-0 left-0">
           <Image className="h-full w-full object-fill" source={HomeBanner.banner} />
+        </View>
+        <View className='absolute z-30 top-0 left-0 w-full'>
+        <CustomSearchBar onOpenCart={()=>{props.onNavigate(RootScreens.CART)}}/>
         </View>
         <ScrollView 
           contentContainerStyle={{

@@ -9,14 +9,17 @@ import { RootScreens } from '@/Screens';
 import { CartContainer } from '@/Screens/Cart';
 import { i18n, LocalizationKey } from '@/Localization';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { faBell, faCircleInfo, faChevronLeft, faClose, faBars } from '@fortawesome/free-solid-svg-icons';
-import { ThemeColors, FontSize, ValidThemeColors } from '@/Theme';
+import { ThemeColors, FontSize, ValidThemeColors, MetricsSizes } from '@/Theme';
 import { useAppSelector } from '@/Hooks';
+import { ProductDetailContainer } from '@/Screens/ProductDetail';
 
 export type RootStackParamList = {
   [RootScreens.MAIN]: undefined;
   [RootScreens.WELCOME]: undefined;
   [RootScreens.CART]: undefined;
+  [RootScreens.PRODUCT_DETAIL]: undefined;
 };
 
 const RootStack = createNativeStackNavigator<RootStackParamList>();
@@ -35,7 +38,7 @@ const ApplicationNavigator = () => {
           animation: 'fade_from_bottom',
         }}
       >
-        {/* <RootStack.Screen
+        <RootStack.Screen
           name={RootScreens.WELCOME}
           component={WelcomeContainer}
         />
@@ -43,7 +46,7 @@ const ApplicationNavigator = () => {
           name={RootScreens.MAIN}
           component={MainNavigator}
           options={{}}
-        /> */}
+        />
         <RootStack.Screen
           name={RootScreens.CART}
           component={CartContainer}
@@ -59,6 +62,25 @@ const ApplicationNavigator = () => {
             headerRight: () => (
               <TouchableOpacity onPress={() => navigation.goBack()}>
                 <FontAwesomeIcon icon={faBars} size={20} color={ThemeColors[theme].SECONDARY} />
+              </TouchableOpacity>
+            ),
+          })}
+        />
+        <RootStack.Screen
+          name={RootScreens.PRODUCT_DETAIL}
+          component={ProductDetailContainer}
+          options={({ navigation, route }) => ({
+            headerShown: true,
+            title: i18n.t(LocalizationKey.PRODUCT_DETAIL_TITLE),
+            headerTitleAlign: 'center',
+            headerLeft: () => (
+                <TouchableOpacity className="border border-slate-200 rounded-full p-2" onPress={() => navigation.goBack()}>
+                  <FontAwesomeIcon icon={faChevronLeft} size={18} color={ThemeColors[theme].SECONDARY} />
+                </TouchableOpacity>
+            ),
+            headerRight: () => (
+              <TouchableOpacity className="items-center justify-center border border-slate-200 rounded-full p-2" onPress={()=>navigation.navigate(RootScreens.CART)}>
+                <MaterialCommunityIcons name="cart-outline" size={MetricsSizes.BASE_ICON_SIZE} color={ThemeColors[theme].PRIMARY} />
               </TouchableOpacity>
             ),
           })}
