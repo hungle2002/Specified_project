@@ -2,6 +2,10 @@ export const ThemeColors = {
   'default': {
     TRANSPARENT_0_5: "rgba(255,255,255,0.5)",
     TRANSPARENT : "rgba(0,0,0,0)",
+    CART_VARIANT_BACKGROUND: "rgba(219,219,219,0.7)",
+
+    DISCOUNT: "#CD0303",
+
     INPUT_BACKGROUND : "#FFFFFF",
     BUTTON_SECONDARY : "#FFFFFF",
     WHITE : "#ffffff",
@@ -22,11 +26,13 @@ export const ThemeColors = {
   'custom1': {
     TRANSPARENT_0_5: "rgba(255,255,255,0.5)",
     TRANSPARENT : "rgba(0,0,0,0)",
+    CART_VARIANT_BACKGROUND: "rgba(219,219,219,0.7)",
     INPUT_BACKGROUND : "#FFFFFF",
     BUTTON_SECONDARY : "#FFFFFF",
     WHITE : "#ffffff",
     BLACK : "#000000",
 
+    DISCOUNT: "#CD0303",
     TEXT : "#000000",
     SUBTEXT : "#7C7878",
 

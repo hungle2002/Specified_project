@@ -55,6 +55,7 @@ export enum MetricsSizes {
   BASE_BRADIUS = base_bradius,
   BASE_PADDING = small,
   LARGE_PADDING = medium,
+  VERY_LARGE_PADDING = medium*2,
   BORDER_WIDTH = border_width,
   BASE_ICON_SIZE = base_icon_size,
   SMALL_BUTTON = small_button,

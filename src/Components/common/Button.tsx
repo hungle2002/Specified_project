@@ -33,7 +33,7 @@ const style = StyleSheet.create( {
   general: {
     backgroundColor: ThemeColors[theme].PRIMARY,
     borderRadius: 10,
-    color: ThemeColors[theme].WHITE,
+    color: ThemeColors[theme].BUTTON_SECONDARY,
   },
   small: {
     width: 100,

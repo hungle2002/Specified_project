@@ -1,10 +1,8 @@
-import React, {useState} from "react";
-import { View, Text, StyleSheet, TouchableOpacity, Image} from "react-native";
-import { ThemeColors, FontSize, ValidThemeColors, MetricsSizes } from '@/Theme';
+import React from "react";
+import { View, StyleSheet} from "react-native";
+import {   MetricsSizes } from '@/Theme';
 import { Product } from "@/Services";
 import ProductItem from "@/Components/Shopping/ProductItem";
-
-let theme: ValidThemeColors = 'default';
 
 interface ProductListRowProps {
   itemLeft: Product;
