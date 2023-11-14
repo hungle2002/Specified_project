@@ -9,4 +9,14 @@ export const en = {
   [LocalizationKey.HOME_TREND]: "Trending",
   [LocalizationKey.LOADING]: "Loading",
   [LocalizationKey.VIEW_MORE]: "View more",
+
+  [LocalizationKey.CART_TITLE]: "Shopping Cart",
+  [LocalizationKey.PRODUCT_DETAIL_TITLE]: "Detail",
+
+  [LocalizationKey.SHOPPING]: "Shopping",
+  [LocalizationKey.SEARCH_PRODUCTS]: "Search products...",
+
+  [LocalizationKey.ALL]: "All",
+  [LocalizationKey.RECENTLY_RELEASED]: "Recently released",
+  [LocalizationKey.FILTER]: "Filter",
 };

@@ -1,6 +1,6 @@
 import { i18n, LocalizationKey } from '@/Localization';
 import React from 'react';
-import { View, Text, StyleSheet, ScrollView, Image, SafeAreaView, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, Image, SafeAreaView, TouchableOpacity} from 'react-native';
 import { Button } from 'native-base';
 import { useAppSelector } from '@/Hooks';
 import { ThemeColors, FontSize, ValidThemeColors } from '@/Theme';
@@ -9,11 +9,12 @@ import CarouselCards from '@/Components/common/carousel';
 import ProductCarousel from '@/Components/Home/productCarousel';
 import { BannerModel, ProductBannerModel } from '@/Services/banners';
 import SafeViewAndroid from '@/Components/common/SafeAreaViewAndroid';
-import { TabScreens } from '..';
+import { RootScreens, TabScreens } from '..';
+import CustomSearchBar from '@/Components/common/SearchBar';
 
 let theme: ValidThemeColors = 'default';
 interface IHomeProps {
-  onNavigate: (string: TabScreens) => void;
+  onNavigate: (string: TabScreens | RootScreens) => void;
 }
 
 const promotionData: BannerModel[] = HomeBanner?.promotion.map((e) => ({ imgUrl: e }));
@@ -26,6 +27,9 @@ export const Home = ( props: IHomeProps ) => {
       <View style={styles.container}>
         <View className="h-48 w-full z-10 absolute top-0 left-0">
           <Image className="h-full w-full object-fill" source={HomeBanner.banner} />
+        </View>
+        <View className='absolute z-30 top-0 left-0 w-full'>
+        <CustomSearchBar onOpenCart={()=>{props.onNavigate(RootScreens.CART)}}/>
         </View>
         <ScrollView 
           contentContainerStyle={{
@@ -42,7 +46,7 @@ export const Home = ( props: IHomeProps ) => {
             <View>
               <View style={styles.headerContainer}>
                 <Text style={styles.header}>{i18n.t(LocalizationKey.HOME_TREND)}</Text>
-                <TouchableOpacity onPress={() => props.onNavigate( TabScreens.SHOPPING )} >
+                <TouchableOpacity onPress={() => props.onNavigate( RootScreens.CART )} >
                   <Text style={styles.viewMoreText} >{i18n.t(LocalizationKey.VIEW_MORE)}</Text>
                 </TouchableOpacity>
               </View>
@@ -51,7 +55,7 @@ export const Home = ( props: IHomeProps ) => {
             <View>
               <View style={styles.headerContainer}>
                 <Text style={styles.header}>{i18n.t(LocalizationKey.HOME_NEW)}</Text>
-                <TouchableOpacity onPress={() => props.onNavigate( TabScreens.SHOPPING )} >
+                <TouchableOpacity onPress={() => props.onNavigate( RootScreens.CART )} >
                   <Text style={styles.viewMoreText} >{i18n.t(LocalizationKey.VIEW_MORE)}</Text>
                 </TouchableOpacity>
               </View>

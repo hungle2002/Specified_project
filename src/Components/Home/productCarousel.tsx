@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import Carousel, { Pagination } from 'react-native-snap-carousel';
 import { View, Text, StyleSheet, Dimensions, Image } from 'react-native';
 import { ProductBannerModel } from '@/Services/banners';
@@ -24,7 +24,9 @@ interface CarouselCardModel {
   index: number;
 }
 
-const CarouselCardItem = ({ item, index }: CarouselCardModel) => {
+const _renderitem = ( { item, index }:  CarouselCardModel) => <CarouselCardItem item={item} index={index} />;
+
+const CarouselCardItem = memo( function CarouselCardItem({ item, index }: CarouselCardModel) {
   return (
     <View style={styles.container} key={index}>
       {item.typeSpecial === 1 && <Foundation style={styles.saleIcon} name="burst-sale" size={30} color={ThemeColors[theme].SECONDARY} />}
@@ -43,7 +45,7 @@ const CarouselCardItem = ({ item, index }: CarouselCardModel) => {
       )}
     </View>
   );
-};
+});
 
 export interface CarouselCardProps {
   data: ProductBannerModel[];
@@ -62,7 +64,7 @@ const ProductCarousel = (props: CarouselCardProps) => {
         autoplay={true}
         loop={true}
         data={props.data}
-        renderItem={CarouselCardItem}
+        renderItem={_renderitem}
         onSnapToItem={(index: number) => setIndex(index)}
         sliderWidth={SLIDER_WIDTH}
         itemWidth={ITEM_WIDTH}

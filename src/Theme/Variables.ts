@@ -39,11 +39,24 @@ export enum FontSize {
 const tiny = 5; // 10
 const small = tiny * 2; // 10
 const regular = tiny * 3; // 15
+const medium = small * 2; //20
 const large = regular * 2; // 30
-
+const large_bradius = 15;
+const base_bradius = 8;
+const border_width = 1;
+const base_icon_size = 24;
+const small_button = 40;
 export enum MetricsSizes {
   TINY = tiny,
   SMALL = small,
   REGULAR = regular,
   LARGE = large,
+  LARGE_BRADIUS = large_bradius,
+  BASE_BRADIUS = base_bradius,
+  BASE_PADDING = small,
+  LARGE_PADDING = medium,
+  VERY_LARGE_PADDING = medium*2,
+  BORDER_WIDTH = border_width,
+  BASE_ICON_SIZE = base_icon_size,
+  SMALL_BUTTON = small_button,
 }
